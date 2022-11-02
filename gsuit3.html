@@ -1,0 +1,192 @@
+<html>
+<head>
+<title>Game Suit</title>
+<style>
+input {
+    font-size: 0px;
+    height:140px;
+    width:600px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+a.player {
+background-color: green;
+}
+a.com {
+background-color: red;
+}
+
+a.menang {
+background-color: green;
+}
+
+a.kalah {
+background-color: red;
+}
+
+a.imbang {
+
+}
+</style>
+</head>
+<body onload="star();">
+<center>
+<div style="position:relative; top:400px; background-color:;">
+<input id="batu" type="button"  onclick="batu();" value="batu">
+</div>
+
+<div style="position:relative; top:415px; background-color:;">
+<input id="gunting" type="button" onclick="gunting();" value="gunting">
+</div>
+
+<div style="position:relative; top:428px; background-color:;">
+<input id="kertas" type="button" onclick="kertas();" value="kertas">
+</div>
+
+<script type="text/javascript">
+//const prompt = require("prompt-sync")();
+//prompt terminal
+function star(){
+alert("Welcome");
+}
+
+//fungsi batu
+function batu(){
+player = document.getElementById("batu").value;
+while(true){
+
+//fungsi acak
+ com = Math.random();
+ if(com < 0.30){com1 = "batu";}
+ else if(com >= 0.30 && com < 0.60){com1 = "kertas";}
+ else if (com >= 0.60 && com < 0.90){com1 = "gunting"}
+
+
+//batu vs gunting = menang
+if(player == "batu" && com1 == "gunting"){hasil = 'menang';}
+//batu vs batu = seri
+else if(player == "batu" && com1 == "batu"){hasil = 'imbang';}
+// batu vs kertas = kalah
+else if(player == "batu" && com1 == "kertas"){hasil = 'kalah';}
+//exit
+else if(player == 0){console.log("bye-bye"); break;}
+//jika player memasukan pilihan salah
+else{ break;}
+
+// output nya
+if(hasil == "menang"){
+//alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nanda => '+hasil);
+document.getElementById('output').innerHTML = "<a class='player'>Player</a> : "+player+" vs <a class='com'>Com</a> : "+com1+" Anda => <a class='menang'>"+hasil+"</a>";
+player = document.getElementById("player")[0].reset();}
+
+if(hasil == "kalah"){
+//alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nanda => '+hasil);
+document.getElementById('output').innerHTML = "<a class='player'>Player</a> : "+player+" vs <a class='com'>Com</a> : "+com1+" Anda => <a class='kalah'>"+hasil+"</a>";
+player = document.getElementById("player")[0].reset();}
+
+else{
+//alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nhasil => '+hasil); 
+document.getElementById('output').innerHTML = "<a class='player'>Player</a> : "+player+" vs <a class='com'>Com</a> : "+com1+" Hasil => "+hasil;}
+
+player = document.getElementById("player")[0].reset();}
+
+//end start
+}
+
+//fungsi gunting
+function gunting(){
+player = document.getElementById("gunting").value;
+while(true){
+
+//fungsi acak
+ com = Math.random();
+ if(com < 0.30){com1 = "gunting";}
+ else if(com >= 0.30 && com < 0.60){com1 = "batu";}
+ else if (com >= 0.60 && com < 0.90){com1 = "kertas"}
+
+
+//gunting vs gunting = imbang
+if(player == "gunting" && com1 == "gunting"){hasil = 'imbang';}
+//gunting vs batu = klah
+else if(player == "gunting" && com1 == "batu"){hasil = 'kalah';}
+//kertas vs batu = menang
+//gunting vs kertas = menang
+else if(player == "gunting" && com1 == "kertas"){ hasil = 'menang';}
+//exit
+else if(player == 0){console.log("bye-bye"); break;}
+//jika player memasukan pilihan salah
+else{ break;}
+
+// output nya
+if(hasil == "menang"){
+//alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nanda => '+hasil);
+document.getElementById('output').innerHTML = "<a class='player'>Player</a> : "+player+" vs <a class='com'>Com</a> : "+com1+" Anda => <a class='menang'>"+hasil+"</a>";
+player = document.getElementById("player")[0].reset();}
+
+if(hasil == "kalah"){
+//alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nanda => '+hasil);
+document.getElementById('output').innerHTML = "<a class='player'>Player</a> : "+player+" vs <a class='com'>Com</a> : "+com1+" Anda => <a class='kalah'>"+hasil+"</a>";
+player = document.getElementById("player")[0].reset();}
+
+else{
+//alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nhasil => '+hasil); 
+document.getElementById('output').innerHTML = "<a class='player'>Player</a> : "+player+"vs <a class='com'>Com</a> : "+com1+" Hasil => "+hasil;
+}
+player = document.getElementById("player")[0].reset();}
+
+//end start
+}
+
+//fungsi kertas
+function kertas(){
+player = document.getElementById("kertas").value;
+while(true){
+
+//fungsi acak
+ com = Math.random();
+ if(com < 0.30){com1 = "kertas";}
+ else if(com >= 0.30 && com < 0.60){com1 = "batu";}
+ else if (com >= 0.60 && com < 0.90){com1 = "gunting"}
+
+
+//batu vs gunting = menang
+//kertas vs batu = menang
+if(player == "kertas" && com1 == "batu"){hasil = 'menang';}
+//kertas vs kertas = seri
+else if(player == "kertas" && com1 == "kertas"){hasil = 'imbang';}
+//kertas vs gunting = kalah
+else if(player == "kertas" && com1 == "gunting"){hasil = 'kalah';}
+//exit
+else if(player == 0){console.log("bye-bye"); break;}
+//jika player memasukan pilihan salah
+else{ break;}
+
+// output nya
+if(hasil == "menang"){
+//alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nanda => '+hasil);
+document.getElementById('output').innerHTML = "<a class='player'>Player</a> : "+player+" vs <a class='com'>Com</a> : "+com1+" Anda => <a class='menang'>"+hasil+"</a>";
+player = document.getElementById("player")[0].reset();}
+
+if(hasil == "kalah"){
+//alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nanda => '+hasil);
+document.getElementById('output').innerHTML = "<a class='player'>Player</a> : "+player+" vs <a class='com'>Com</a> : "+com1+" Anda => <a class='kalah'>"+hasil+"</a>";
+player = document.getElementById("player")[0].reset();}
+
+else{
+//alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nhasil => '+hasil); 
+document.getElementById('output').innerHTML = "<a class='player'>Player</a> : "+player+" vs <a class='com'>Com</a> : "+com1+" Hasil => "+hasil;}
+player = document.getElementById("player")[0].reset();}
+
+//end start
+}
+</script>
+<div>
+<div id="output"></div><br>
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5slcszpSJ4ksMoh85dcGCSeLpT4IwU8WpgXLp5680YZvRK2RnXqaoB3GwSbpLn_cJ26DE_E5Ax214VxtRoMu0LELEJwtdlHqt3hqxRG686frK2Ris9t4YD6NfzJOHcRuiudIVFvH-HqkA5fYrSaAMvR_zoUtmLwgA7ZHo3ahudf-NG7FJeUS_P6EH/s567/tangansuwit.png">
+</div>
+</body>
+<html>

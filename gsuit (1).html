@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>Game Suit</title>
+<style>
+input {
+    height:120px;
+    width:600px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+</style>
+</head>
+<body onload="star();">
+<center>
+<!--<input type="text" value="gunting" id="gunting" hidden>-->
+<!--<input type="text" value="batu" id="batu" hidden>-->
+<!--<input type="text" value="kertas" id="kertas" hidden>-->
+
+<div style="position:relative; top:400px;">
+<input id="batu" type="button"  onclick="batu();" value="batu">
+</div>
+
+<div style="position:relative; top:410px;">
+<input id="gunting" type="button" onclick="gunting();" value="gunting">
+</div>
+
+<div style="position:relative; top:425px;">
+<input id="kertas" type="button" onclick="kertas();" value="kertas">
+</div>
+
+<script type="text/javascript">
+//const prompt = require("prompt-sync")();
+//prompt terminal
+
+//fungsi batu
+function batu(){
+player = document.getElementById("batu").value;
+while(true){
+
+//fungsi acak
+ com = Math.random();
+ if(com < 0.30){com1 = "batu";}
+ else if(com >= 0.30 && com < 0.60){com1 = "kertas";}
+ else if (com >= 0.60 && com < 0.90){com1 = "gunting"}
+
+
+//batu vs gunting = menang
+if(player == "batu" && com1 == "gunting"){hasil = 'menang';}
+//gunting vs gunting = seri
+else if(player == "gunting" && com1 == "gunting"){hasil = 'imbang';}
+//gunting vs batu = klah
+else if(player == "gunting" && com1 == "batu"){hasil = 'kalah';}
+//kertas vs batu = menang
+else if(player == "kertas" && com1 == "batu"){hasil = 'menang';}
+//batu vs batu = seri
+else if(player == "batu" && com1 == "batu"){hasil = 'imbang';}
+// batu vs kertas = kalah
+else if(player == "batu" && com1 == "kertas"){hasil = 'kalah';}
+//kertas vs kertas = seri
+else if(player == "kertas" && com1 == "kertas"){hasil = 'imbang';}
+//gunting vs kertas = menang
+else if(player == "gunting" && com1 == "kertas"){ hasil = 'menang';}
+//kertas vs gunting = kalah
+else if(player == "kertas" && com1 == "gunting"){hasil = 'kalah';}
+//exit
+else if(player == 0){console.log("bye-bye"); break;}
+//jika player memasukan pilihan salah
+else{ break;}
+
+// output nya
+if(hasil == "menang" || hasil == "kalah"){
+alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nanda => '+hasil);
+player = document.getElementById("player")[0].reset();}
+
+else{alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nhasil => '+hasil); }
+player = document.getElementById("player")[0].reset();}
+
+//end start
+}
+
+//fungsi gunting
+function gunting(){
+player = document.getElementById("gunting").value;
+while(true){
+
+//fungsi acak
+ com = Math.random();
+ if(com < 0.30){com1 = "gunting";}
+ else if(com >= 0.30 && com < 0.60){com1 = "batu";}
+ else if (com >= 0.60 && com < 0.90){com1 = "kertas"}
+
+
+//batu vs gunting = menang
+if(player == "batu" && com1 == "gunting"){hasil = 'menang';}
+//gunting vs gunting = seri
+else if(player == "gunting" && com1 == "gunting"){hasil = 'imbang';}
+//gunting vs batu = klah
+else if(player == "gunting" && com1 == "batu"){hasil = 'kalah';}
+//kertas vs batu = menang
+else if(player == "kertas" && com1 == "batu"){hasil = 'menang';}
+//batu vs batu = seri
+else if(player == "batu" && com1 == "batu"){hasil = 'imbang';}
+// batu vs kertas = kalah
+else if(player == "batu" && com1 == "kertas"){hasil = 'kalah';}
+//kertas vs kertas = seri
+else if(player == "kertas" && com1 == "kertas"){hasil = 'imbang';}
+//gunting vs kertas = menang
+else if(player == "gunting" && com1 == "kertas"){ hasil = 'menang';}
+//kertas vs gunting = kalah
+else if(player == "kertas" && com1 == "gunting"){hasil = 'kalah';}
+//exit
+else if(player == 0){console.log("bye-bye"); break;}
+//jika player memasukan pilihan salah
+else{ break;}
+
+// output nya
+if(hasil == "menang" || hasil == "kalah"){
+alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nanda => '+hasil);
+player = document.getElementById("player")[0].reset();}
+
+else{alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nhasil => '+hasil); }
+player = document.getElementById("player")[0].reset();}
+
+//end start
+}
+
+//fungsi kertas
+function kertas(){
+player = document.getElementById("kertas").value;
+while(true){
+
+//fungsi acak
+ com = Math.random();
+ if(com < 0.30){com1 = "kertas";}
+ else if(com >= 0.30 && com < 0.60){com1 = "batu";}
+ else if (com >= 0.60 && com < 0.90){com1 = "gunting"}
+
+
+//batu vs gunting = menang
+if(player == "batu" && com1 == "gunting"){hasil = 'menang';}
+//gunting vs gunting = seri
+else if(player == "gunting" && com1 == "gunting"){hasil = 'imbang';}
+//gunting vs batu = klah
+else if(player == "gunting" && com1 == "batu"){hasil = 'kalah';}
+//kertas vs batu = menang
+else if(player == "kertas" && com1 == "batu"){hasil = 'menang';}
+//batu vs batu = seri
+else if(player == "batu" && com1 == "batu"){hasil = 'imbang';}
+// batu vs kertas = kalah
+else if(player == "batu" && com1 == "kertas"){hasil = 'kalah';}
+//kertas vs kertas = seri
+else if(player == "kertas" && com1 == "kertas"){hasil = 'imbang';}
+//gunting vs kertas = menang
+else if(player == "gunting" && com1 == "kertas"){ hasil = 'menang';}
+//kertas vs gunting = kalah
+else if(player == "kertas" && com1 == "gunting"){hasil = 'kalah';}
+//exit
+else if(player == 0){console.log("bye-bye"); break;}
+//jika player memasukan pilihan salah
+else{ break;}
+
+// output nya
+if(hasil == "menang" || hasil == "kalah"){
+alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nanda => '+hasil);
+player = document.getElementById("player")[0].reset();}
+
+else{alert('anda : '+player+'\n\tvs\ncom : '+com1+'\nhasil => '+hasil); }
+player = document.getElementById("player")[0].reset();}
+
+//end start
+}
+</script>
+<br>
+<div>
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5slcszpSJ4ksMoh85dcGCSeLpT4IwU8WpgXLp5680YZvRK2RnXqaoB3GwSbpLn_cJ26DE_E5Ax214VxtRoMu0LELEJwtdlHqt3hqxRG686frK2Ris9t4YD6NfzJOHcRuiudIVFvH-HqkA5fYrSaAMvR_zoUtmLwgA7ZHo3ahudf-NG7FJeUS_P6EH/s567/tangansuwit.png">
+</div>
+</body>
+<html>

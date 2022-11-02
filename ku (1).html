@@ -1,0 +1,26 @@
+<html>
+<head>
+<title> uji coba </title>
+</head>
+<body onload="pencet();">
+<input type="button" onclick="pencet();" value="pencet">
+<script type='text/javascript'>
+//javascript quote in arrays db
+function pencet(){
+quote = new Array(5);
+quote[0] = "<b>Eexpression</b>";
+quote[1] = "<b>Etypes and variable</b>";
+quote[2] = "<b>Emath operator & functions</b>";
+quote[3] = "<b>Ehight order function</b>";
+quote[4] = "<b>Earrow function</b>";
+//menentukan random index
+index = Math.floor(Math.random() * quote.length);
+//menampilkan quote
+button = '<input type="button" onclick="pencet();" value="pencet">';
+document.write(button,"\n");
+document.write(quote[index]);
+//db end arrays
+}
+</script>
+</body>
+</html>

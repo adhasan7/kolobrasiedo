@@ -1,0 +1,73 @@
+<html>
+<head>
+<title> uji coba </title>
+</head>
+<body onload="start();">
+<input type="button" onclick="pencet();" value="pencet">
+<script type='text/javascript'>
+//javascript quote in arrays db
+function start(){
+button = '<input type="button" onclick="pencet();" value="pencet"><br>';
+document.write(button);
+}
+function pencet(){
+quote = new Array(5);
+quote[0] = "<b>Expression</b>";
+quote[1] = "<b>Types and variable</b>";
+quote[2] = "<b>Math operator & functions</b>";
+quote[3] = "<b>High order function</b>";
+quote[4] = "<b> Arrow function</b>";
+quote[5] = "<b>Loops(for, while, do while)</b>";
+quote[6] = "<b>Array</b>";
+quote[7] = "<b>Simple programs using arrays</b>";
+quote[8] = "<b>Template literal</b>";
+quote[9] = "<b>Dates and math objects</b>";
+quote[10] = "<b>Async programming</b>";
+quote[11] = "<b>Callback, timer & promises</b>";
+quote[12] = "<b>Asyn & wait</b>";
+quote[13] = "<b>Event</b>";
+quote[14] = "<b>Revise & practice</b>";
+quote[15] = "<b>Build small project</b>";
+quote[16] = "<b>Import and export</b>";
+quote[17] = "<b>Arrow function</b>";
+quote[18] = "<b>Template literals</b>";
+quote[19] = "<b>Map and flter</b>";
+quote[20] = "<b>Array destructuring</b>";
+quote[21] = "<b>Object destructuring</b>";
+quote[22] = "<b>Operator ternary</b>";
+quote[23] = "<b>Conditional rendering</b>";
+quote[24] = "<b>Template literals</b>";
+quote[25] = "<b>Short conditionals &&,|| ternary operator</b>";
+quote[26] = "<b>Three array methods</b>";
+quote[27] = "<b>Destructuring</b>";
+quote[28] = "<b>Spread and rest operator</b>";
+quote[29] = "<b>Functions and arrow functions</b>";
+quote[30] = "<b>pendahuluan</b>";
+quote[31] = "<b>Dom selection 1</b>";
+quote[32] = "<b>Dom selection 2</b>";
+quote[33] = "<b> Dom manipulation 1</b>";
+quote[34] = "<b>Dom maipulation 2</b>";
+quote[35] = "<b>Dom events</b>";
+quote[36] = "<b>Bermain dengan warna</b>";
+quote[37] = "<b>Membuat game suwit jawa</b>";
+quote[38] = "<b>Dom traversal</b>";
+quote[39] = "<b>Prevent default</b>";
+quote[40] = "<b>Event bubbling</b>";
+quote[41] = "<b>Membuat image gallery</b>";
+quote[42] = "<b> Tahapan belajar javascrpt</b>";
+quote[43] = "<b>Akses file JSON dengan javascript</b>";
+quote[44] = "<b>Akses public Rest API</b>";
+
+//menentukan random index
+index = Math.floor(Math.random() * quote.length);
+//menampilkan quote
+
+document.write("\n");
+document.write(quote[index]+"<br>");
+//db end arrays
+button = '<input type="button" value="Jelaskan"><br>';
+document.write(button);
+}
+</script>
+</body>
+</html>
